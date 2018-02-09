@@ -69,7 +69,9 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
 
 /////////////////////////////////////
 /* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is
+  the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and concatenates a message using the
+  arguments that were passed into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
@@ -81,7 +83,21 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
+  var totalSum = 0;
+  var message = '';
 
+  for(var i = 0; i < testArray.length; i++) { 
+    totalSum = sum(totalSum, testArray[i])[0];
+
+      //Adds array numbers to the beginning of the message
+      if(i === testArray.length - 1) {
+        message = message.concat(testArray[i]);
+      } else {
+        message = message.concat(testArray[i] + ',');
+      }
+  }
+  message = message.concat(' was passed in as an array of numbers, and ' + totalSum + ' is their sum.');
+  return[totalSum, message];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
