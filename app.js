@@ -117,7 +117,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
+  var totalProduct = 1;
+  var message = 'The numbers ';
 
+  for(var i = 0; i < testArray.length; i++) { 
+    totalProduct = multiply(totalProduct, testArray[i])[0];
+
+    if(i === testArray.length - 1) {
+      message = message.concat(testArray[i]);
+    } else {
+      message = message.concat(testArray[i] + ',');
+    }
+  }
+  message = message.concat(' have a product of ' + totalProduct + '.');
+  return[totalProduct, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
