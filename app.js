@@ -55,7 +55,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+  var theSum = sum(sum(a,b)[0], c)[0];
+  var theProduct = multiply(multiply(a,b)[0], c)[0];
+  var sumMessage = a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.';
+  var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.';
+  return[theSum, theProduct, sumMessage, productMessage];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
